@@ -2,12 +2,12 @@ import experience from '../data/experience';
 
 function Experience() {
     return (
-        <section className="section experience" id="experience">
+        <section className="section experience" id="journey">
             <div className="container">
                 <div className="section-heading">
                     <p className="section-heading_eyebrow">Journey</p>
 
-                    <h2>Where I'm growing.</h2>
+                    <h2>I'm still early. That's the point.</h2>
                 </div>
 
                 <div className="experience_timeline">

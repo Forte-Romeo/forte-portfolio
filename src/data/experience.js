@@ -1,24 +1,24 @@
 const experience = [
     {
         id: 1,
-        period: '2026 — Present',
+        period: '2026 - Present',
         title: 'Information Technology Student',
         description:
-            'Studying Information Technology while developing practical software engineering skills through personal projects and continuous learning.',
+            'Studying Information Technology while developing practical software engineering skills through projects, experimentation, and continuous learning.',
     },
     {
         id: 2,
-        period: '2026',
+        period: '2026 - Present',
         title: 'Independent Developer',
         description:
-            'Building frontend applications and experimenting with APIs, React, Git, automation, and emerging technologies.',
+            'Building web applications while developing stronger foundations in JavaScript, React, APIs, Git, and modern development workflows.',
     },
     {
         id: 3,
-        period: 'Future',
-        title: 'Software + AI Engineer',
+        period: 'Next',
+        title: 'Full-Stack Development',
         description:
-            'Working toward becoming a full-stack software + AI engineer and eventually building technology products and companies.',
+            'Expanding into backend engineering, databases, authentication, APIs, deployment, and production-ready application architecture.',
     },
 ]
 

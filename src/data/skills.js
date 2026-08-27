@@ -4,7 +4,7 @@ const skills = [
         number: '01',
         title: 'Frontend Development',
         description:
-            'Building responsive interfaces with HTML, CSS, JavaScript, and React.',
+            'Creating responsive and structured interfaces with modern web technologies.',
         technologies: ['HTML', 'CSS', 'JavaScript', 'React'],
     },
     {
@@ -12,7 +12,7 @@ const skills = [
         number: '02',
         title: 'Programming',
         description:
-            'Developing problem-solving skills through Python, JavaScript, and C++.',
+            'Strengthening software engineering fundamentals through multiple programming languages.',
         technologies: ['Python', 'JavaScript', 'C++'],
     },
     {
@@ -20,15 +20,15 @@ const skills = [
         number: '03',
         title: 'APIs & Data',
         description:
-            'Working with APIs, databases, application data, and backend technologies.',
+            'Connecting applications to external services and working with structured application data.',
         technologies: ['REST APIs', 'PostgreSQL', 'Data'],
     },
     {
         id: 4,
         number: '04',
-        title: 'Tools & Workflow',
+        title: 'Developer Tools',
         description:
-            'Using Git, GitHub, VS Code, Linux, Docker, and modern development workflows.',
+            'Using professional development tools and workflows to build, test, and manage software.',
         technologies: ['Git', 'GitHub', 'Linux', 'Docker'],
     },
 ]

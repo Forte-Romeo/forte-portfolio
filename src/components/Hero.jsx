@@ -3,33 +3,51 @@ function Hero() {
         <section className="hero" id="home">
             <div className="container hero_container">
                 <div className="hero_content">
-                    <p className="hero_eyebrow">Hello, I'm Forte Romeo</p>
+                    <p className="hero_eyebrow">Information Technology Student</p>
 
                     <h1>
-                        Building digital
-                        <span> experiences </span>
+                        I build
+                        <span> digital products </span>
                         with code.
                     </h1>
 
                     <p className="hero_description">
-                        I'm an Information Technology student and aspiring software + AI
-                        engineer focused on building useful products, exploring technology,
-                        and turning ideas into reality.
+                        I'm Forte Romeo, an aspiring software + AI engineer exploring web
+                        development, artificial intelligence, and the intersection of
+                        technology and entrepreneurship.
                     </p>
 
                     <div className="hero_actions">
                         <a href="#products" className="button button--primary">
-                            View My Work
+                            Explore My Work
                         </a>
 
                         <a href="#contact" className="button button--secondary">
-                            Get In Touch
+                            Let's Connect
+                        </a>
+                    </div>
+
+                    <div className="hero_socials">
+                        <a 
+                            href="https://github.com/Forte-Romeo"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            Github ↗
+                        </a>
+
+                        <a 
+                            href="https://linkedin.com"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            LinkedIn ↗
                         </a>
                     </div>
                 </div>
 
                 <div className="hero_visual">
-                    <div className="hero_placeholder">
+                    <div className="hero_portrait">
                         <span>FR</span>
                     </div>
                 </div>

@@ -3,25 +3,25 @@ const projects = [
         id: 1,
         title: 'Weather Application',
         description:
-            'A responsive weather application that retrieves live weather information through an external API.',
+            'A responsive weather application that consumes live weather data through an external API and presents it through a clean user interface.',
         technologies: ['React', 'JavaScript', 'API'],
-        category: 'Frontend',
+        category: 'Web App',
         featured: true,
     },
     {
         id: 2,
-        title: 'Movie Search Application',
+        title: 'API Dashboard',
         description:
-            'A movie discovery application built around API-powered search and dynamic results.',
-        technologies: ['JavaScript', 'API', 'CSS'],
-        category: 'Frontend',
+            'A data-focused dashboard built to practice API integration, asynchronous JavaScript, reusable components, and responsive interface design.',
+        technologies: ['React', 'JavaScript', 'REST API'],
+        category: 'React',
         featured: true,
     },
     {
         id: 3,
         title: 'Authentication UI',
         description:
-            'A modern authentication interface demonstrating reusable React components and interactive forms.',
+            'A responsive authentication interface exploring reusable React components, form structure, state management, and user experience.',
         technologies: ['React', 'JavaScript', 'CSS'],
         category: 'React',
         featured: true,

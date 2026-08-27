@@ -9,12 +9,12 @@ function Projects() {
                     <div>
                         <p className="section-heading_eyebrow">Selected Work</p>
 
-                        <h2>Projects I've built.</h2>
+                        <h2>Things I've built while learning.</h2>
                     </div>
 
                     <p>
-                        A collection of projects I've created while learning, experimenting,
-                        and developing my skills.
+                        Practical projects that document my progression from web
+                        fundamentals into modern React development.
                     </p>
                 </div>
 

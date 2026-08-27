@@ -3,28 +3,29 @@ function About() {
         <section className="section about" id="about">
             <div className="container">
                 <div className="section-heading">
-                    <p className="section-heading_eyebrow">About Me</p>
+                    <p className="section-heading_eyebrow">About</p>
 
-                    <h2>Building my future through technology.</h2>
+                    <h2>Curious about technology. Serious about building.</h2>
                 </div>
 
                 <div className="about_content">
                     <div className="about_text">
                         <p>
-                            I'm an Information Technology student with a growing focus on
-                            software engineering, artificial intelligence, and building
-                            digital products.
+                            I'm an Information Technology student developing my foundation
+                            across software + AI engineering, web development, and emerging
+                            technologies.
                         </p>
 
                         <p>
-                            I enjoy understanding how things work, experimenting with new 
-                            technologies, and turning what I learn into practical projects.
+                            I learn by building. Instead of only studying concepts, I turn
+                            what I learn into projects that force me to understand how
+                            different pieces of technology actually work together.
                         </p>
 
                         <p>
-                            My long-term goal is to combine technology, entrepreneurship, and 
-                            innovation to build products and companies that create real
-                            value.
+                            I'm particularly interested in software engineering, artificial
+                            intelligence, automation, and the opportunities created when
+                            technology meets entrepreneurship.
                         </p>
                     </div>
 
@@ -35,13 +36,18 @@ function About() {
                         </div>
 
                         <div className="about_detail">
-                            <span>Focus</span>
-                            <strong>Software + AI Engineering</strong>
+                            <span>Studying</span>
+                            <strong>Information Technology</strong>
                         </div>
 
                         <div className="about_detail">
-                            <span>Currently</span>
-                            <strong>Building & Learning</strong>
+                            <span>Building</span>
+                            <strong>Software Projects</strong>
+                        </div>
+
+                        <div className="about_detail">
+                            <span>Interested in</span>
+                            <strong>AI &amp; Entrepreneurship</strong>
                         </div>
                     </div>
                 </div>

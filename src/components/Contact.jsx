@@ -4,21 +4,32 @@ function Contact() {
             <div className="container">
                 <div className="contact_container">
                     <div className="contact_content">
-                        <p className="section-heading_eyebrow">Contact</p>
+                        <p className="section-heading_eyebrow">Have an idea?</p>
 
                         <h2>Let's build something meaningful.</h2>
 
                         <p>
-                            Whether it's a project, collaboration, opportunity, or simply a
-                            conversation about technology, I'd love to hear from you.
+                            I'm always interested in interesting projects, collaborations,
+                            opportunities, and conversations around technology.
                         </p>
 
-                        <a
-                            href="mailto:hello@example.com"
-                            className="button button--primary"
-                        >
-                            Send Me an Email
-                        </a>
+                        <div className="contact_actions">
+                            <a
+                                href="mailto:fergusonromeonyarmah@gmail.com"
+                                className="button button--primary"
+                            >
+                                Get In Touch
+                            </a>
+
+                            <a
+                                href="https://linkedin.com"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="button button--outline-light"
+                            >
+                                LinkedIn ↗
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
