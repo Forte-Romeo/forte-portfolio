@@ -1,4 +1,5 @@
-import ProjectCard from './ProjectCard'
+import ProjectCard from './ProjectCard';
+import projects from '../data/projects';
 
 function Projects() {
     return (
@@ -18,23 +19,16 @@ function Projects() {
                 </div>
 
                 <div className="projects_grid">
-                    <ProjectCard
-                        title="Weather Application"
-                        description="A responsive weather application that retrieves live weather information through an external API."
-                        technologies={['React', 'JavaScript', 'API']}
-                    />
-
-                    <ProjectCard
-                        title="Movie Search Application"
-                        description="A movie discovery application built around API-powered search and dynamic results."
-                        technologies={['JavaScript', 'API', 'CSS']}
-                    />
-
-                    <ProjectCard
-                        title="Authentication UI"
-                        description="A modern authentication interface demonstrating reusable React components and interactive forms."
-                        technologies={['React', 'JavaScript', 'CSS']}
-                    />
+                    {projects.map((project) => (
+                        <ProjectCard
+                            key={project.id}
+                            title={project.title}
+                            description={project.description}
+                            technologies={project.technologies}
+                            category={project.category}
+                            featured={project.featured}
+                        />
+                    ))}
                 </div>
             </div>
         </section>

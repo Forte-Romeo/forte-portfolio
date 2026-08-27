@@ -1,4 +1,4 @@
-function ProjectCard({ title, description, technologies }) {
+function ProjectCard({ title, description, technologies, category, featured }) {
     return (
         <article className="project-card">
             <div className="project-card_image">
@@ -6,6 +6,12 @@ function ProjectCard({ title, description, technologies }) {
             </div>
 
             <div className="project-card_content">
+                <div className="project-card_meta">
+                    <span>{category}</span>
+
+                    {featured && <span>Featured</span>}
+                </div>
+                
                 <h3>{title}</h3>
 
                 <p>{description}</p>
