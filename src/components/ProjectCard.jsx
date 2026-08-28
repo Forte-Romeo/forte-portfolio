@@ -1,8 +1,16 @@
-function ProjectCard({ title, description, technologies, category, featured }) {
+function ProjectCard({ number, title, description, technologies, category, featured, image, github, live }) {
     return (
-        <article className="project-card">
-            <div className="project-card_image">
-                <span>Project Preview</span>
+        <article className={`project-card ${featured ? 'project-card--featured' : ''}`}>
+            <div className="project-card_image-wrapper">
+                <img 
+                    src={image} 
+                    alt={`${title} project preview`} 
+                    className="project-card_image"
+                />
+
+                <div className="project-card_number">
+                    {number}
+                </div>
             </div>
 
             <div className="project-card_content">
@@ -22,9 +30,23 @@ function ProjectCard({ title, description, technologies, category, featured }) {
                     ))}
                 </div>
 
-                <a href="#contact" className="project-card_link">
-                    View Project →
-                </a>
+                <div className="project-card_links">
+                    <a 
+                        href={github}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        GitHub ↗
+                    </a>
+
+                    <a 
+                        href={live}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Live Demo ↗
+                    </a>
+                </div>
             </div>
         </article>
     );
