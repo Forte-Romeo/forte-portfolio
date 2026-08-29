@@ -1,10 +1,21 @@
+import { useState } from "react";
 import ProjectCard from './ProjectCard';
 import projects from '../data/projects';
 
 function Projects() {
-    const featuredProjects = projects.filter(
-        (project) => project.featured
-    )
+    const [activeCategory, setActiveCategory] = useState('All')
+
+    const categories = [
+        'All',
+        ...new Set(projects.map((project) => project.category)),
+    ]
+
+    const filteredProjects = 
+        activeCategory === 'All'
+            ? projects
+            : projects.filter(
+                (project) => project.category === activeCategory
+              )
 
     return (
         <section className="section projects" id="projects">
@@ -23,8 +34,26 @@ function Projects() {
                     </p>
                 </div>
 
-                <div className="projects_grid">
-                    {featuredProjects.map((project) => (
+                <div className="projects_filters" aria-label="Project filters">
+                    {categories.map((category) => (
+                        <button
+                            type="button"
+                            key={category}
+                            className={`projects_filter ${
+                                activeCategory === category
+                                ? 'projects__filter--active'
+                                : ''
+                            }`}
+                            onClick={() => setActiveCategory(category)}
+                        >
+                        {category}
+                        </button>
+                    ))}
+                </div>
+
+                {filteredProjects.length > 0 ? (
+                    <div className="projects_grid">
+                        {filteredProjects.map((project) => (
                         <ProjectCard
                             key={project.id}
                             number={project.number}
@@ -37,12 +66,20 @@ function Projects() {
                             github={project.github}
                             live={project.live}
                         />
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                ) : (
+                    <div className="projects_empty">
+                        <p>No projects in this category yet.</p>
+                    </div>
+                )}
 
                 <div className="projects_footer">
                     <p>
-                        More projects will be added as I continue building.
+                        Showing {filteredProjects.length}{' '}
+                        {filteredProjects.length === 1
+                        ? 'project'
+                        : 'projects'}
                     </p>
 
                     <a
