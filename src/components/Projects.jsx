@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ProjectCard from './ProjectCard';
+import Reveal from './Reveal';
 import projects from '../data/projects';
 
 function Projects() {
@@ -20,77 +21,92 @@ function Projects() {
     return (
         <section className="section projects" id="projects">
             <div className="container">
-                <div className="section-heading section-heading--split">
-                    <div>
-                        <p className="section-heading_eyebrow">Selected Work</p>
+                <Reveal>
+                    <div className="section-heading section-heading--split">
+                        <div>
+                            <p className="section-heading_eyebrow">Selected Work</p>
 
-                        <h2>Things I've built while learning.</h2>
+                            <h2>Things I've built while learning.</h2>
+                        </div>
+
+                        <p>
+                            A growing collection of applications that document my
+                            progression through software engineering and modern web
+                            development.
+                        </p>
                     </div>
+                </Reveal>
 
-                    <p>
-                        A growing collection of applications that document my
-                        progression through software engineering and modern web
-                        development.
-                    </p>
-                </div>
-
-                <div className="projects_filters" aria-label="Project filters">
-                    {categories.map((category) => (
-                        <button
-                            type="button"
-                            key={category}
-                            className={`projects_filter ${
+                <Reveal delay={100}>
+                    <div
+                        className="projects_filters"
+                        aria-label="Project filters"
+                    >
+                        {categories.map((category) => (
+                            <button
+                                type="button"
+                                key={category}
+                                className={`projects_filter ${
                                 activeCategory === category
-                                ? 'projects__filter--active'
-                                : ''
-                            }`}
-                            onClick={() => setActiveCategory(category)}
-                        >
-                        {category}
-                        </button>
-                    ))}
-                </div>
+                                    ? 'projects_filter--active'
+                                    : ''
+                                }`}
+                                onClick={() => setActiveCategory(category)}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+                </Reveal>
 
                 {filteredProjects.length > 0 ? (
                     <div className="projects_grid">
-                        {filteredProjects.map((project) => (
-                        <ProjectCard
-                            key={project.id}
-                            number={project.number}
-                            title={project.title}
-                            description={project.description}
-                            technologies={project.technologies}
-                            category={project.category}
-                            featured={project.featured}
-                            image={project.image}
-                            github={project.github}
-                            live={project.live}
-                        />
+                        {filteredProjects.map((project, index) => (
+                            <Reveal
+                                key={project.id}
+                                delay={index * 100}
+                            >
+                                <ProjectCard
+                                    number={project.number}
+                                    title={project.title}
+                                    description={project.description}
+                                    technologies={project.technologies}
+                                    category={project.category}
+                                    featured={project.featured}
+                                    image={project.image}
+                                    github={project.github}
+                                    live={project.live}
+                                />
+                            </Reveal>
                         ))}
                     </div>
                 ) : (
-                    <div className="projects_empty">
-                        <p>No projects in this category yet.</p>
-                    </div>
+                    <Reveal>
+                        <div className="projects_empty">
+                            <p>No projects in this category yet.</p>
+                        </div>
+                    </Reveal>
                 )}
 
-                <div className="projects_footer">
-                    <p>
-                        Showing {filteredProjects.length}{' '}
-                        {filteredProjects.length === 1
-                        ? 'project'
-                        : 'projects'}
-                    </p>
+                <Reveal delay={100}>
+                    <div className="projects_footer">
+                        <p>
+                            Showing {filteredProjects.length}{' '}
+                            {filteredProjects.length === 1
+                                ? 'project'
+                                : 'projects'}
+                        </p>
 
-                    <a
-                        href="https://github.com/Forte-Romeo"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="projects_github"
-                    >
-                        Explore GitHub ↗
-                    </a>
-                </div>
+                        <a
+                            href="https://github.com/Forte-Romeo"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="projects__github"
+                        >
+                            Explore GitHub ↗
+                        </a>
+                    </div>
+                </Reveal>
             </div>
         </section>
     );
