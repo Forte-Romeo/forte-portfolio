@@ -101,7 +101,7 @@ function Projects() {
                             href="https://github.com/Forte-Romeo"
                             target="_blank"
                             rel="noreferrer"
-                            className="projects__github"
+                            className="projects_github"
                         >
                             Explore GitHub ↗
                         </a>
