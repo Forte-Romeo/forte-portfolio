@@ -2,7 +2,7 @@ import Reveal from './Reveal';
 
 function Hero() {
     return (
-        <section className="hero" id="home">
+        <section className="hero" id="home" aria-labelledby='hero-title'>
             <div className="container hero_container">
                 <div className="hero_content">
                     <Reveal>
@@ -10,9 +10,9 @@ function Hero() {
                     </Reveal>
 
                     <Reveal delay={100}>
-                        <h1>
+                        <h1 id='hero-title'>
                             I build
-                            <span> digital products </span>
+                            <span>digital products</span>
                             with code.
                         </h1>
                     </Reveal>

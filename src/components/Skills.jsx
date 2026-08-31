@@ -3,14 +3,14 @@ import skills from '../data/skills';
 
 function Skills() {
     return (
-        <section className="section skills" id="skills">
+        <section className="section skills" id="skills" aria-labelledby='skills-title'>
             <div className="container">
                 <Reveal>
                     <div className="section-heading section-heading--split">
                         <div>
                             <p className="section-heading_eyebrow">Capabilities</p>
 
-                            <h2>The stack I'm building with.</h2>
+                            <h2 id='skills-title'>The stack I'm building with.</h2>
                         </div>
 
                         <p>

@@ -2,13 +2,13 @@ import Reveal from './Reveal'
 
 function About() {
     return (
-        <section className="section about" id="about">
+        <section className="section about" id="about" aria-labelledby='about-title'>
             <div className="container">
                 <Reveal>
                     <div className="section-heading">
                         <p className="section-heading_eyebrow">About</p>
 
-                        <h2>
+                        <h2 id='about-title'>
                             Curious about technology. Serious about building.
                         </h2>
                     </div>

@@ -3,13 +3,13 @@ import experience from '../data/experience';
 
 function Experience() {
     return (
-        <section className="section experience" id="journey">
+        <section className="section experience" id="journey" aria-labelledby='journey-title'>
             <div className="container">
                 <Reveal>
                     <div className="section-heading">
                         <p className="section-heading_eyebrow">Journey</p>
 
-                        <h2>I'm still early. That's the point.</h2>
+                        <h2 id='journey-title'>I'm still early. That's the point.</h2>
                     </div>
                 </Reveal>
 

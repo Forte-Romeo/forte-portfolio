@@ -19,14 +19,14 @@ function Projects() {
               )
 
     return (
-        <section className="section projects" id="projects">
+        <section className="section projects" id="projects" aria-labelledby="projects-title">
             <div className="container">
                 <Reveal>
                     <div className="section-heading section-heading--split">
                         <div>
                             <p className="section-heading_eyebrow">Selected Work</p>
 
-                            <h2>Things I've built while learning.</h2>
+                            <h2 id="projects-title">Things I've built while learning.</h2>
                         </div>
 
                         <p>
@@ -51,6 +51,7 @@ function Projects() {
                                     ? 'projects_filter--active'
                                     : ''
                                 }`}
+                                aria-pressed={activeCategory === category}
                                 onClick={() => setActiveCategory(category)}
                             >
                                 {category}
@@ -90,7 +91,10 @@ function Projects() {
 
                 <Reveal delay={100}>
                     <div className="projects_footer">
-                        <p>
+                        <p
+                            className="projects_result-count"
+                            aria-live="polite"
+                        >
                             Showing {filteredProjects.length}{' '}
                             {filteredProjects.length === 1
                                 ? 'project'

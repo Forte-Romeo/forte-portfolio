@@ -11,9 +11,13 @@ import BackToTop from './components/BackToTop';
 function App() {
   return (
     <div className="app">
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
+      
       <Navbar />
 
-      <main>
+      <main id='main-content'>
         <Hero />
         <About />
         <Skills />

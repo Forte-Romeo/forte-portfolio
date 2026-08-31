@@ -59,7 +59,10 @@ a {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
   outline: 2px solid var(--color-text);
   outline-offset: 4px;
 }
@@ -154,6 +157,28 @@ section[id] {
   font-size: clamp(2.5rem, 5vw, 4.8rem);
   line-height: 0.95;
   letter-spacing: -0.065em;
+}
+
+.skip-link {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+
+  padding: 12px 16px;
+
+  background: var(--color-text);
+  color: #ffffff;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  transform: translateY(-150%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 /* =========================================================
@@ -794,6 +819,20 @@ section[id] {
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
+}
+
+.project-card_image-placeholder {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
 }
 
 .project-card:hover .project-card_image {

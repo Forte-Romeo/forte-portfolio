@@ -2,7 +2,7 @@ import Reveal from './Reveal';
 
 function Contact() {
     return (
-        <section className="section contact" id="contact">
+        <section className="section contact" id="contact" aria-labelledby='contact-title'>
             <div className="container">
                 <Reveal>
                     <div className="contact_container">
@@ -11,7 +11,7 @@ function Contact() {
                                 Have an idea?
                             </p>
 
-                            <h2>Let's build something meaningful.</h2>
+                            <h2 id='contact-title'>Let's build something meaningful.</h2>
 
                             <p>
                                 I'm always interested in interesting projects,
