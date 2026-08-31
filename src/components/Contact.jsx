@@ -28,7 +28,7 @@ function Contact() {
                                 </a>
 
                                 <a
-                                    href="https://linkedin.com"
+                                    href="https://linkedin.com/in/ferguson-romeo-nyarmah"
                                     target="_blank"
                                     rel="noreferrer"
                                     className="button button--outline-light"

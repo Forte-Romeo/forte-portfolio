@@ -9,8 +9,8 @@ const projects = [
         category: 'Web Application',
         featured: true,
         image: '/images/projects/weather-app.webp',
-        github: 'https://github.com/Forte-Romeo/weather-app',
-        live: 'https://your-weather-app.vercel.app',
+        github: 'https://github.com/Forte-Romeo/weather-dashboard-react',
+        live: '',
     },
     {
         id: 2,
@@ -23,7 +23,7 @@ const projects = [
         featured: true,
         image: '/images/projects/api-dashboard.webp',
         github: 'https://github.com/Forte-Romeo/api-dashboard',
-        live: 'https://your-api-dashboard.vercel.app',
+        live: '',
     },
     {
         id: 3,
@@ -35,8 +35,8 @@ const projects = [
         category: 'React Application',
         featured: true,
         image: '/images/projects/auth-ui.webp',
-        github: 'https://github.com/Forte-Romeo/auth-ui',
-        live: 'https://your-auth-ui.vercel.app',
+        github: 'https://github.com/Forte-Romeo/authentication-ui',
+        live: '',
     },
 ]
 
