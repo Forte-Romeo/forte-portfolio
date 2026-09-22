@@ -11,33 +11,38 @@ function Reveal({
     useEffect(() => {
         const element = elementRef.current
 
-        if (!element) {
-            return
-        }
+        if (!element) return
 
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
                     setIsVisible(true)
-                    observer.unobserve(element)
+                    observer.disconnect()
                 }
             },
             {
                 threshold: 0.12,
+                rootMargin: '0px 0px -40px 0px'
             }
         )
 
         observer.observe(element)
 
-        return () => {
-            observer.disconnect()
-        }
+        return () => observer.disconnect()
     }, [])
+
+    const classes = [
+        'reveal',
+        isVisible ? 'reveal--visible' : '',
+        className,
+    ]
+        .filter(Boolean)
+        .join(' ')
 
     return (
         <div
             ref={elementRef}
-            className={`reveal ${isVisible ? 'reveal--visible' : ''} ${className}`}
+            className={classes}
             style={{ '--reveal-delay': `${delay}ms` }}
         >
             {children}

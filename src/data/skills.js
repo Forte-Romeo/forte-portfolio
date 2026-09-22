@@ -20,15 +20,15 @@ const skills = [
         number: '03',
         title: 'APIs & Data',
         description:
-            'Connecting applications to external services and working with structured application data.',
-        technologies: ['REST APIs', 'PostgreSQL', 'Data'],
+            'Integrating REST APIs in projects while building practical experience with relational databases and structured data.',
+        technologies: ['REST APIs', 'PostgreSQL', 'SQL'],
     },
     {
         id: 4,
         number: '04',
         title: 'Developer Tools',
         description:
-            'Using professional development tools and workflows to build, test, and manage software.',
+            'Using Git, GitHub, and Linux in development while building experience with Docker and reproducible local environments.',
         technologies: ['Git', 'GitHub', 'Linux', 'Docker'],
     },
 ]

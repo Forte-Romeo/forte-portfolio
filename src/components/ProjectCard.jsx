@@ -36,14 +36,14 @@ function ProjectCard({ number, title, description, technologies, category, featu
 
                 <p>{description}</p>
 
-                <div
+                <ul
                     className='project-card_technologies'
                     aria-label={`${title} technologies`}
                 >
                     {technologies.map((technology) => (
-                        <span key={technology}>{technology}</span>
+                        <li key={technology}>{technology}</li>
                     ))}
-                </div>
+                </ul>
 
                 <div className="project-card_links">
                     {github && (

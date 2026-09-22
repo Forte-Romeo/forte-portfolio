@@ -18,9 +18,9 @@ function About() {
                     <Reveal delay={100}>
                         <div className="about_text">
                             <p>
-                                I'm an Information Technology student developing my
-                                foundation across software engineering, web development,
-                                and emerging technologies.
+                                I'm an Information Technology student building my
+                                foundation in software engineering, web development,
+                                full-stack development, and artificial intelligence.
                             </p>
 
                             <p>
@@ -52,7 +52,7 @@ function About() {
                             </div>
 
                             <div className="about_detail">
-                                <span>Building</span>
+                                <span>Current Focus</span>
                                 <strong>Software Projects</strong>
                             </div>
 

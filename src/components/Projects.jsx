@@ -40,7 +40,8 @@ function Projects() {
                 <Reveal delay={100}>
                     <div
                         className="projects_filters"
-                        aria-label="Project filters"
+                        role="group"
+                        aria-label="Filter projects by category"
                     >
                         {categories.map((category) => (
                             <button
@@ -66,6 +67,7 @@ function Projects() {
                             <Reveal
                                 key={project.id}
                                 delay={index * 100}
+                                className={project.featured ? 'project-reveal--featured' : ''}
                             >
                                 <ProjectCard
                                     number={project.number}
@@ -104,7 +106,7 @@ function Projects() {
                         <a
                             href="https://github.com/Forte-Romeo"
                             target="_blank"
-                            rel="noreferrer"
+                            rel="noopener noreferrer"
                             className="projects_github"
                         >
                             Explore GitHub ↗

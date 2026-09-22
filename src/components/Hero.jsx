@@ -12,22 +12,22 @@ function Hero() {
                     <Reveal delay={100}>
                         <h1 id='hero-title'>
                             I build
-                            <span>digital products</span>
-                            with code.
+                            <span>software</span>
+                            while learning to build it better.
                         </h1>
                     </Reveal>
 
                     <Reveal delay={180}>
                         <p className="hero_description">
-                            I'm Forte Romeo, an aspiring software + AI engineer exploring web
-                            development, artificial intelligence, and the intersection of
-                            technology and entrepreneurship.
+                            I'm Forte Romeo, an Information Technology student building my 
+                            foundation in software engineering, full-stack development, and AI. 
+                            I learn by turning what I study into working projects.
                         </p>
                     </Reveal>
 
                     <Reveal delay={260}>
                         <div className="hero_actions">
-                            <a href="#products" className="button button--primary">
+                            <a href="#projects" className="button button--primary">
                                 Explore My Work
                             </a>
 
@@ -42,15 +42,15 @@ function Hero() {
                             <a 
                                 href="https://github.com/Forte-Romeo"
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                             >
-                                Github ↗
+                                GitHub ↗
                             </a>
 
                             <a 
                                 href="https://linkedin.com/in/ferguson-romeo-nyarmah"
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                             >
                                 LinkedIn ↗
                             </a>

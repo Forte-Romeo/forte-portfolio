@@ -14,9 +14,9 @@ function Skills() {
                         </div>
 
                         <p>
-                            My toolkit is evolving continuously as I move from
-                            frontend development toward full-stack software
-                            engineering.
+                            My current stack reflects what I'm actively using in projects,
+                            alongside the technologies I'm learning as I move from frontend
+                            development toward full-stack software engineering.
                         </p>
                     </div>
                 </Reveal>

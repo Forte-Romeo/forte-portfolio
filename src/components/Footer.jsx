@@ -13,15 +13,15 @@ function Footer() {
                     <a 
                         href="https://github.com/Forte-Romeo"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                     >
-                        Github
+                        GitHub
                     </a>
 
                     <a 
                         href="https://linkedin.com/in/ferguson-romeo-nyarmah"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                     >
                         LinkedIn
                     </a>

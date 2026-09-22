@@ -14,14 +14,13 @@ function Contact() {
                             <h2 id='contact-title'>Let's build something meaningful.</h2>
 
                             <p>
-                                I'm always interested in interesting projects,
-                                collaborations, opportunities, and conversations
-                                around technology.
+                                I'm open to thoughtful collaborations, software projects,
+                                learning opportunities, and conversations around technology.
                             </p>
 
                             <div className="contact_actions">
                                 <a
-                                    href="mailto:fergusonromeonyarmah@example.com"
+                                    href="mailto:fergusonromeonyarmah@gmail.com"
                                     className="button button--primary"
                                 >
                                     Get In Touch
@@ -30,10 +29,10 @@ function Contact() {
                                 <a
                                     href="https://linkedin.com/in/ferguson-romeo-nyarmah"
                                     target="_blank"
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                     className="button button--outline-light"
                                 >
-                                    LinkedIn ↗
+                                    Connect on LinkedIn ↗
                                 </a>
                             </div>
                         </div>

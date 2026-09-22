@@ -15,10 +15,10 @@ const experience = [
     },
     {
         id: 3,
-        period: 'Next',
-        title: 'Full-Stack Development',
+        period: 'Current Focus',
+        title: 'Full-Stack & AI Engineering',
         description:
-            'Expanding into backend engineering, databases, authentication, APIs, deployment, and production-ready application architecture.',
+            'Currently expanding into backend engineering, databases, authentication, APIs, deployment, Artificial Intelligence, and production-ready application architecture.',
     },
 ]
 

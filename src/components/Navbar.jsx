@@ -13,12 +13,12 @@ function Navbar() {
 
         const observer = new IntersectionObserver(
             (entries) => {
-                const visibleSection = entries.find(
-                    (entry) => entry.isIntersecting
-                )
+                const visibleSection = entries
+                    .filter((entry) => entry.isIntersecting)
+                    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
 
-                if (visibleSection) {
-                    setActiveSection(visibleSection.target.id)
+                if (visibleSection.length > 0) {
+                    setActiveSection(visibleSection[0].target.id)
                 }
             },
             {
@@ -34,6 +34,22 @@ function Navbar() {
             observer.disconnect()
         };
     }, [])
+
+    useEffect(() => {
+        if (!isMenuOpen) return
+
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') {
+                setIsMenuOpen(false)
+            }
+        }
+
+        document.addEventListener('keydown', handleKeyDown)
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown)
+        }
+    }, [isMenuOpen])
 
     return(
         <header className="navbar">
