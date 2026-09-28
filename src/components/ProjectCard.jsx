@@ -1,26 +1,52 @@
-import { useState } from "react";
+function ProjectCard({ number, title, description, technologies, category, featured, status, image, github, live }) {
 
-function ProjectCard({ number, title, description, technologies, category, featured, image, github, live }) {
-    const [imageError, setImageError] = useState(false);
+    const isBuilding = status === 'building';
     
     return (
-        <article className={`project-card ${featured ? 'project-card--featured' : ''}`}>
+        <article 
+            className={`project-card ${featured ? 'project-card--featured' : ''
+            } ${isBuilding ? 'project-card--building' : ''}`}
+        >
             <div className="project-card_image-wrapper">
-                {image && !imageError ? (
+                {isBuilding ? (
+                    <div
+                        className="project-card_building"
+                        aria-label={`${title} is currently being built`}
+                    >
+                        <span className="project-card_building-number">
+                            {number}
+                        </span>
+
+                        <div className="project-card_building-content">
+                            <span className="project-card_status">
+                                Building
+                            </span>
+
+                            <h3>{title}</h3>
+
+                            <p>
+                                Full-stack project currently in development.
+                            </p>
+                        </div>
+
+                        <span className="project-card_building-mark">
+                            01 / 05
+                        </span>
+                    </div>
+                ) : image ? (
                     <img
                         className="project-card_image"
                         src={image}
                         alt={`${title} project preview`}
                         loading="lazy"
                         decoding="async"
-                        onError={() => setImageError(true)}
                     />
                 ) : (
-                    <div
+                    <div 
                         className="project-card_image-placeholder"
-                        aria-hidden="true"
+                        aria-label={`${title} project preview`}
                     >
-                        {number}
+                        <span>Preview coming soon</span>
                     </div>
                 )}
             </div>
@@ -32,7 +58,15 @@ function ProjectCard({ number, title, description, technologies, category, featu
                     <span className="project-card_category">{category}</span>
                 </div>
 
-                <h3>{title}</h3>
+                <div className="project-card_heading">
+                    <div>
+                        <span className="project-card_status">
+                            {isBuilding ? 'In progress' : 'Live'}
+                        </span>
+
+                        <h3>{title}</h3>
+                    </div>
+                </div>
 
                 <p>{description}</p>
 
@@ -57,7 +91,7 @@ function ProjectCard({ number, title, description, technologies, category, featu
                         </a>
                     )}
 
-                    {live && (
+                    {live && !isBuilding && (
                         <a
                             href={live}
                             target="_blank"

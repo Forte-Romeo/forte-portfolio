@@ -793,21 +793,139 @@ html.js .reveal.reveal--visible {
 }
 
 .project-card_image-placeholder {
-  width: 100%;
-  height: 100%;
-
-  display: grid;
-  place-items: center;
-
-  background: var(--color-surface);
-  color: var(--color-text-muted);
-
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    padding: 30px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    font-family:
+        "JetBrains Mono",
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .project-card:hover .project-card_image {
   transform: scale(1.03);
+}
+
+.project-card--building .project-card_image-wrapper {
+    background: var(--color-surface);
+}
+
+.project-card_building {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    padding: clamp(25px, 4vw, 50px);
+    overflow: hidden;
+    background:
+        linear-gradient(
+            135deg,
+            transparent 0%,
+            rgba(0, 0, 0, 0.025) 100%
+        );
+}
+
+.project-card_building::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.04) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.04) 1px,
+            transparent 1px
+        );
+    background-size: 42px 42px;
+    pointer-events: none;
+}
+
+.project-card_building-number,
+.project-card_building-mark {
+    position: relative;
+    z-index: 1;
+    font-family:
+        "JetBrains Mono",
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.project-card_building-content {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+    margin: auto 0;
+    padding: 60px 0;
+}
+
+.project-card_building-content h3 {
+    margin: 12px 0 10px;
+    font-size: clamp(2.4rem, 6vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+}
+
+.project-card_building-content p {
+    max-width: 420px;
+    margin: 0;
+    color: var(--color-text-muted);
+}
+
+.project-card_status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family:
+        "JetBrains Mono",
+        ui-monospace,
+        SFMono-Regular,
+        Menlo,
+        Monaco,
+        Consolas,
+        monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.project-card_status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.project-card_building-mark {
+    align-self: flex-end;
 }
 
 /* =========================================================
@@ -1568,6 +1686,14 @@ html.js .reveal.reveal--visible {
     gap: 15px;
   }
 
+  .project-card_building-content {
+    padding: 40px 0;
+  }
+
+  .project-card_building-content h3 {
+    font-size: clamp(2.5rem, 14vw, 4rem);
+  }
+
   /* Experience */
 
   .experience-item {
@@ -1693,6 +1819,10 @@ html.js .reveal.reveal--visible {
 
   .project-card_content {
     padding: 20px;
+  }
+
+  .project-card_building {
+    padding: 22px;
   }
 
   .contact_container {

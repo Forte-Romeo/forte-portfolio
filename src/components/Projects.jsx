@@ -76,6 +76,7 @@ function Projects() {
                                     technologies={project.technologies}
                                     category={project.category}
                                     featured={project.featured}
+                                    status={project.status}
                                     image={project.image}
                                     github={project.github}
                                     live={project.live}
