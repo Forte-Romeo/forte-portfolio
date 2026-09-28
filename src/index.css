@@ -529,13 +529,12 @@ html.js .reveal.reveal--visible {
 }
 
 .hero_portrait {
+  position: relative;
   width: min(100%, 430px);
   aspect-ratio: 4 / 5;
-  display: grid;
-  place-items: center;
+  overflow: hidden;
   border: 1px solid var(--color-border);
   background: var(--color-surface);
-
   transition:
     transform 0.5s ease,
     box-shadow 0.5s ease;
@@ -543,14 +542,37 @@ html.js .reveal.reveal--visible {
 
 .hero_portrait:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.08);
 }
 
-.hero_portrait span {
-  font-size: clamp(5rem, 10vw, 9rem);
-  font-weight: 800;
+.hero_portrait-image {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  width: auto;
+  height: 100%;
+  max-width: none;
+  transform: translateX(50%);
+  object-fit: contain;
+  object-position: center bottom;
+  transition: opacity 450ms ease;
+}
 
-  letter-spacing: -0.09em;
+.hero_portrait-image--bw {
+  opacity: 1;
+}
+
+.hero_portrait-image--color {
+  opacity: 0;
+}
+
+.hero_portrait:hover .hero_portrait-image--bw {
+  opacity: 0;
+}
+
+.hero_portrait:hover .hero_portrait-image--color {
+  opacity: 1;
 }
 
 /* =========================================================
@@ -1601,11 +1623,7 @@ html.js .reveal.reveal--visible {
   }
 
   .hero_portrait {
-    width: min(100%, 280px);
-  }
-
-  .hero_portrait span {
-    font-size: clamp(5rem, 23vw, 7rem);
+    width: min(100%, 320px);
   }
 
   /* Section headings */
@@ -1880,5 +1898,23 @@ html.js .reveal.reveal--visible {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .hero_portrait,
+  .hero_portrait-image {
+    transition: none;
+  }
+
+  .hero_portrait:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .hero_portrait-image--bw {
+    opacity: 1;
+  }
+
+  .hero_portrait-image--color {
+    opacity: 0;
   }
 }

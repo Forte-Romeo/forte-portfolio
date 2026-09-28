@@ -61,7 +61,21 @@ function Hero() {
                 <Reveal className='hero_visual-reveal' delay={220}>
                     <div className="hero_visual">
                         <div className="hero_portrait">
-                            <span>FR</span>
+                            <img
+                                className="hero_portrait-image hero_portrait-image--bw"
+                                src="/images/portrait/portrait-bw.PNG"
+                                alt="Forte Romeo wearing a black suit"
+                                fetchPriority="high"
+                                decoding="async"
+                            />
+
+                            <img
+                                className="hero_portrait-image hero_portrait-image--color"
+                                src="/images/portrait/portrait-color.PNG"
+                                alt=""
+                                aria-hidden="true"
+                                decoding="async"
+                            />
                         </div>
                     </div>
                 </Reveal>
