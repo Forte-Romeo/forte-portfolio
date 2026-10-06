@@ -44,7 +44,7 @@ function Hero() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                GitHub ↗
+                                GitHub
                             </a>
 
                             <a 
@@ -52,7 +52,7 @@ function Hero() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                LinkedIn ↗
+                                LinkedIn
                             </a>
                         </div>
                     </Reveal>

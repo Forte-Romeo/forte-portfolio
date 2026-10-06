@@ -87,7 +87,7 @@ function ProjectCard({ number, title, description, technologies, category, featu
                             rel="noopener noreferrer"
                             aria-label={`View ${title} source code on GitHub`}
                         >
-                            GitHub ↗
+                            GitHub
                         </a>
                     )}
 
@@ -98,7 +98,7 @@ function ProjectCard({ number, title, description, technologies, category, featu
                             rel="noopener noreferrer"
                             aria-label={`View live ${title} project`}
                         >
-                            Live Demo ↗
+                            Live Demo
                         </a>
                     )}
                 </div>

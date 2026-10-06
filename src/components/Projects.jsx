@@ -110,7 +110,7 @@ function Projects() {
                             rel="noopener noreferrer"
                             className="projects_github"
                         >
-                            Explore GitHub ↗
+                            Explore GitHub
                         </a>
                     </div>
                 </Reveal>

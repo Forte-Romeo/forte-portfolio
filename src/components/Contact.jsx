@@ -32,7 +32,7 @@ function Contact() {
                                     rel="noopener noreferrer"
                                     className="button button--outline-light"
                                 >
-                                    Connect on LinkedIn ↗
+                                    Connect on LinkedIn
                                 </a>
                             </div>
                         </div>

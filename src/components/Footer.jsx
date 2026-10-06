@@ -26,7 +26,7 @@ function Footer() {
                         LinkedIn
                     </a>
 
-                    <a href="#home">Back to top ↑</a>
+                    <a href="#home">Back to top</a>
                 </div>
             </div>
         </footer>

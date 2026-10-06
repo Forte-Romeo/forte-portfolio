@@ -16,7 +16,8 @@
   --color-accent: #171717;
 
   --container-width: 1180px;
-  --section-padding: 120px;
+  --section-padding: 76px;
+  --navbar-height: 76px;
 }
 
 /* =========================================================
@@ -86,12 +87,16 @@ ul {
 }
 
 section[id] {
-  scroll-margin-top: 90px;
+  scroll-margin-top: calc(var(--navbar-height) + 32px);
 }
 
 .app {
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+main {
+  padding-top: calc(var(--navbar-height) + 32px);
 }
 
 /* =========================================================
@@ -127,7 +132,7 @@ section[id] {
 
 .section-heading {
   max-width: 800px;
-  margin-bottom: 60px;
+  margin-bottom: 42px;
 }
 
 .section-heading--split {
@@ -213,26 +218,36 @@ html.js .reveal.reveal--visible {
    ========================================================= */
 
 .navbar {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: 16px;
+  left: 50%;
   z-index: 100;
 
-  border-bottom: 1px solid rgba(222, 222, 217, 0.8);
+  width: min(calc(100% - 32px), 1180px);
 
-  background: rgba(248, 248, 246, 0.9);
+  border: 1px solid rgba(222, 222, 217, 0.9);
+  border-radius: 14px;
+
+  background: rgba(248, 248, 246, 0.92);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+
+  transform: translateX(-50%);
 }
 
 .navbar_container {
-  min-height: 76px;
+  min-height: var(--navbar-height);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
   gap: 30px;
+
+  padding-inline: 18px;
 }
 
 .navbar_logo {
@@ -428,12 +443,12 @@ html.js .reveal.reveal--visible {
    ========================================================= */
 
 .hero {
-  min-height: calc(100vh - 76px);
+  min-height: calc(100vh - var(--navbar-height));
 
   display: flex;
   align-items: center;
 
-  padding-block: 80px;
+  padding-block: 64px;
 }
 
 .hero_container {
@@ -445,7 +460,7 @@ html.js .reveal.reveal--visible {
 
   align-items: center;
 
-  gap: 90px;
+  gap: 70px;
 }
 
 .hero_content {
@@ -1324,7 +1339,7 @@ html.js .reveal.reveal--visible {
 
 @media (max-width: 1100px) {
   :root {
-    --section-padding: 100px;
+    --section-padding: 68px;
   }
 
   .hero_container {
@@ -1350,7 +1365,7 @@ html.js .reveal.reveal--visible {
 
 @media (max-width: 900px) {
   :root {
-    --section-padding: 90px;
+    --section-padding: 60px;
   }
 
   /* Navbar */
@@ -1365,19 +1380,23 @@ html.js .reveal.reveal--visible {
 
   .navbar_nav {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 8px);
     right: 0;
     left: 0;
 
     display: flex;
-    padding: 25px 20px;
+    padding: 20px;
 
     flex-direction: column;
     align-items: flex-start;
-    gap: 18px;
+    gap: 16px;
 
-    border-bottom: 1px solid var(--color-border);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+
     background: var(--color-background);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 
     opacity: 0;
     visibility: hidden;
@@ -1431,7 +1450,7 @@ html.js .reveal.reveal--visible {
 
   .section-heading--split > p {
     max-width: 650px;
-    margin-top: 25px;
+    margin-top: 18px;
   }
 
   /* About */
@@ -1472,7 +1491,7 @@ html.js .reveal.reveal--visible {
 
 @media (max-width: 700px) {
   :root {
-    --section-padding: 80px;
+    --section-padding: 54px;
   }
 
   .container {
@@ -1576,12 +1595,21 @@ html.js .reveal.reveal--visible {
    ========================================================= */
 
 @media (max-width: 600px) {
+  :root {
+    --navbar-height: 68px;
+  }
+
   .container {
     width: min(100% - 28px, var(--container-width));
   }
 
+  .navbar {
+    top: 10px;
+    width: calc(100% - 20px);
+  }
+
   .navbar_container {
-    min-height: 68px;
+    min-height: var(--navbar-height);
   }
 
   .navbar_cta {
@@ -1629,7 +1657,7 @@ html.js .reveal.reveal--visible {
   /* Section headings */
 
   .section-heading {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
   .section-heading h2 {
