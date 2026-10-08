@@ -16,7 +16,7 @@
   --color-accent: #171717;
 
   --container-width: 1180px;
-  --section-padding: 76px;
+  --section-padding: 64px;
   --navbar-height: 76px;
 }
 
@@ -95,10 +95,6 @@ section[id] {
   overflow-x: hidden;
 }
 
-main {
-  padding-top: calc(var(--navbar-height) + 32px);
-}
-
 /* =========================================================
    PAGE LOAD
    ========================================================= */
@@ -132,7 +128,7 @@ main {
 
 .section-heading {
   max-width: 800px;
-  margin-bottom: 42px;
+  margin-bottom: 36px;
 }
 
 .section-heading--split {
@@ -443,24 +439,25 @@ html.js .reveal.reveal--visible {
    ========================================================= */
 
 .hero {
-  min-height: calc(100vh - var(--navbar-height));
+  min-height: auto;
 
   display: flex;
   align-items: center;
 
-  padding-block: 64px;
+  padding-top: calc(var(--navbar-height) + 18px);
+  padding-bottom: clamp(52px, 6vw, 80px);
 }
 
 .hero_container {
   display: grid;
 
   grid-template-columns:
-    minmax(0, 1.15fr)
-    minmax(320px, 0.85fr);
+    minmax(0, 1.1fr)
+    minmax(280px, 0.9fr);
 
   align-items: center;
 
-  gap: 70px;
+  gap: clamp(40px, 6vw, 80px);
 }
 
 .hero_content {
@@ -867,12 +864,8 @@ html.js .reveal.reveal--visible {
     min-height: 100%;
     padding: clamp(25px, 4vw, 50px);
     overflow: hidden;
-    background:
-        linear-gradient(
-            135deg,
-            transparent 0%,
-            rgba(0, 0, 0, 0.025) 100%
-        );
+    background: #151515;
+    color: #f5f5f2;
 }
 
 .project-card_building::before {
@@ -882,15 +875,28 @@ html.js .reveal.reveal--visible {
     background-image:
         linear-gradient(
             to right,
-            rgba(0, 0, 0, 0.04) 1px,
+            rgba(255, 255, 255, 0.055) 1px,
             transparent 1px
         ),
         linear-gradient(
             to bottom,
-            rgba(0, 0, 0, 0.04) 1px,
+            rgba(255, 255, 255, 0.055) 1px,
             transparent 1px
         );
-    background-size: 42px 42px;
+    background-size: 48px 48px;
+    pointer-events: none;
+}
+
+.project-card_building::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(255, 255, 255, 0.07),
+            transparent 55%
+        );
     pointer-events: none;
 }
 
@@ -910,7 +916,7 @@ html.js .reveal.reveal--visible {
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: rgba(245, 245, 242, 0.55);
 }
 
 .project-card_building-content {
@@ -931,7 +937,7 @@ html.js .reveal.reveal--visible {
 .project-card_building-content p {
     max-width: 420px;
     margin: 0;
-    color: var(--color-text-muted);
+    color: rgba(245, 245, 242, 0.62);
 }
 
 .project-card_status {
@@ -950,7 +956,7 @@ html.js .reveal.reveal--visible {
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: rgba(245, 245, 242, 0.68);
 }
 
 .project-card_status::before {
@@ -1334,48 +1340,43 @@ html.js .reveal.reveal--visible {
 }
 
 /* =========================================================
-   RESPONSIVE — TABLET / SMALL LAPTOP
+   RESPONSIVE — REAL DEVICE CLASSES
    ========================================================= */
 
-@media (max-width: 1100px) {
+/* ---------------------------------------------------------
+   SMALL PHONES — 320px–374px
+   Examples:
+   iPhone SE
+   small Android phones
+--------------------------------------------------------- */
+@media (max-width: 374px) {
   :root {
-    --section-padding: 68px;
+    --section-padding: 44px;
+    --navbar-height: 68px;
   }
 
-  .hero_container {
-    gap: 60px;
+  .container {
+    width: min(100% - 28px, var(--container-width));
   }
 
-  .hero h1 {
-    font-size: clamp(3.6rem, 7vw, 6rem);
+  .navbar {
+    top: 10px;
+    width: calc(100% - 20px);
   }
-
-  .about_content {
-    gap: 70px;
-  }
-
-  .section-heading--split {
-    gap: 50px;
-  }
-}
-
-/* =========================================================
-   RESPONSIVE — TABLET
-   ========================================================= */
-
-@media (max-width: 900px) {
-  :root {
-    --section-padding: 60px;
-  }
-
-  /* Navbar */
 
   .navbar_container {
-    position: relative;
+    min-height: var(--navbar-height);
+    padding-inline: 14px;
+  }
+
+  .navbar_cta {
+    display: none;
   }
 
   .navbar_menu-button {
     display: flex;
+    width: 40px;
+    height: 40px;
   }
 
   .navbar_nav {
@@ -1383,25 +1384,18 @@ html.js .reveal.reveal--visible {
     top: calc(100% + 8px);
     right: 0;
     left: 0;
-
     display: flex;
     padding: 20px;
-
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
-
     border: 1px solid var(--color-border);
     border-radius: 12px;
-
     background: var(--color-background);
-
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
-
     transition:
       opacity 0.2s ease,
       visibility 0.2s ease,
@@ -1418,121 +1412,90 @@ html.js .reveal.reveal--visible {
     padding-block: 5px;
   }
 
-  /* Hero */
-
   .hero {
-    min-height: auto;
-    padding-block: 90px;
+    padding-top: calc(var(--navbar-height) + 14px);
+    padding-bottom: 42px;
   }
 
   .hero_container {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 34px;
   }
 
-  .hero_content {
-    max-width: 760px;
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero_description {
+    margin-top: 24px;
+    font-size: 0.92rem;
+  }
+
+  .hero_actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .hero_actions .button {
+    width: 100%;
+  }
+
+  .hero_socials {
+    gap: 16px;
+    margin-top: 26px;
   }
 
   .hero_visual {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .hero_portrait {
-    width: min(100%, 380px);
+    width: 230px;
   }
 
-  /* Section heading */
+  .section {
+    padding-block: 44px;
+  }
+
+  .section-heading {
+    margin-bottom: 28px;
+  }
+
+  .section-heading h2 {
+    font-size: 2.5rem;
+  }
 
   .section-heading--split {
     display: block;
   }
 
   .section-heading--split > p {
-    max-width: 650px;
     margin-top: 18px;
   }
 
-  /* About */
-
   .about_content {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 40px;
   }
-
-  /* Projects */
-
-  .projects_grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .project-reveal--featured {
-    grid-column: span 2;
-  }
-
-  .project-reveal--featured .project-card_image-wrapper {
-    aspect-ratio: 21 / 10;
-  }
-
-  .project-card p {
-    min-height: auto;
-  }
-
-  /* Contact */
-
-  .contact_container {
-    padding: 70px 50px;
-  }
-}
-
-/* =========================================================
-   RESPONSIVE — LARGE MOBILE
-   ========================================================= */
-
-@media (max-width: 700px) {
-  :root {
-    --section-padding: 54px;
-  }
-
-  .container {
-    width: min(100% - 32px, var(--container-width));
-  }
-
-  /* Hero */
-
-  .hero {
-    padding-block: 70px 80px;
-  }
-
-  .hero h1 {
-    font-size: clamp(3.2rem, 14vw, 5rem);
-    line-height: 0.92;
-  }
-
-  .hero_description {
-    margin-top: 26px;
-
-    font-size: 0.98rem;
-  }
-
-  .hero_actions {
-    margin-top: 30px;
-  }
-
-  .hero_portrait {
-    width: min(100%, 320px);
-  }
-
-  /* Skills */
 
   .skills_grid {
     grid-template-columns: 1fr;
   }
 
-  /* Projects */
+  .skill-card {
+    min-height: 220px;
+    padding: 22px;
+  }
+
+  .skill-card_number {
+    margin-bottom: 35px;
+  }
 
   .projects_grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .project-reveal--featured {
@@ -1544,37 +1507,80 @@ html.js .reveal.reveal--visible {
   }
 
   .project-reveal--featured .project-card_content {
-    padding: 30px 25px;
+    padding: 22px;
   }
 
   .project-reveal--featured .project-card h3 {
-    font-size: clamp(1.7rem, 7vw, 2rem);
+    font-size: 1.7rem;
   }
 
   .project-card_content {
-    padding: 25px;
+    padding: 20px;
   }
 
-  /* Experience */
+  .project-card_meta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .project-card h3 {
+    font-size: 1.35rem;
+  }
+
+  .project-card p {
+    min-height: auto;
+    font-size: 0.88rem;
+  }
+
+  .project-card_links {
+    gap: 16px;
+  }
+
+  .project-card_number {
+    top: 14px;
+    left: 14px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .project-card_building {
+    padding: 22px;
+  }
+
+  .project-card_building-content {
+    padding: 32px 0;
+  }
+
+  .project-card_building-content h3 {
+    font-size: 2.5rem;
+  }
+
+  .projects_footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
 
   .experience-item {
-    grid-template-columns: 130px minmax(0, 1fr);
-    gap: 25px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-block: 28px;
   }
-
-  /* Contact */
 
   .contact_container {
-    min-height: 430px;
-
-    padding: 60px 35px;
+    min-height: 420px;
+    padding: 45px 20px;
   }
 
-  .contact h2 {
-    font-size: clamp(2.8rem, 12vw, 5rem);
+  .contact_actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  /* Footer */
+  .contact_actions .button {
+    width: 100%;
+  }
 
   .footer_container {
     min-height: 110px;
@@ -1585,22 +1591,34 @@ html.js .reveal.reveal--visible {
   }
 
   .footer_links {
-    flex-wrap: wrap;
-    gap: 18px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .back-to-top {
+    right: 15px;
+    bottom: 15px;
+    width: 44px;
+    height: 44px;
   }
 }
 
-/* =========================================================
-   RESPONSIVE — MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
+/* ---------------------------------------------------------
+   STANDARD PHONES — 375px–430px
+   Examples:
+   Galaxy A55
+   iPhone 11–15 standard sizes
+   iPhone 16 / 16 Pro
+--------------------------------------------------------- */
+@media (min-width: 375px) and (max-width: 430px) {
   :root {
+    --section-padding: 48px;
     --navbar-height: 68px;
   }
 
   .container {
-    width: min(100% - 28px, var(--container-width));
+    width: min(100% - 32px, var(--container-width));
   }
 
   .navbar {
@@ -1610,31 +1628,74 @@ html.js .reveal.reveal--visible {
 
   .navbar_container {
     min-height: var(--navbar-height);
+    padding-inline: 16px;
   }
 
   .navbar_cta {
     display: none;
   }
 
-  .navbar_menu-button {
-    width: 42px;
-    height: 42px;
+  .navbar_nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    left: 0;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-background);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease,
+      transform 0.2s ease;
   }
 
-  /* Hero */
+  .navbar_nav--open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .navbar_nav a {
+    padding-block: 5px;
+  }
+
+  .navbar_menu-button {
+    display: flex;
+  }
+
+  .hero {
+    padding-top: calc(var(--navbar-height) + 18px);
+    padding-bottom: 48px;
+  }
 
   .hero_container {
-    gap: 45px;
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .hero h1 {
     font-size: clamp(3rem, 15vw, 4.8rem);
   }
 
+  .hero_description {
+    margin-top: 26px;
+    font-size: 0.98rem;
+  }
+
   .hero_actions {
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
+    margin-top: 30px;
   }
 
   .hero_actions .button {
@@ -1654,32 +1715,38 @@ html.js .reveal.reveal--visible {
     width: min(100%, 320px);
   }
 
-  /* Section headings */
+  .section {
+    padding-block: 48px;
+  }
 
   .section-heading {
-    margin-bottom: 32px;
+    margin-bottom: 30px;
+  }
+
+  .section-heading--split {
+    display: block;
+  }
+
+  .section-heading--split > p {
+    margin-top: 18px;
   }
 
   .section-heading h2 {
     font-size: clamp(2.5rem, 13vw, 4rem);
   }
 
-  /* About */
+  .about_content {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
 
   .about_text p {
     font-size: 1rem;
   }
 
-  .about_detail {
-    gap: 15px;
+  .skills_grid {
+    grid-template-columns: 1fr;
   }
-
-  .about_detail span,
-  .about_detail strong {
-    font-size: 0.78rem;
-  }
-
-  /* Skills */
 
   .skill-card {
     min-height: 240px;
@@ -1690,16 +1757,25 @@ html.js .reveal.reveal--visible {
     margin-bottom: 45px;
   }
 
-  /* Projects */
-
-  .projects_filters {
-    gap: 6px;
+  .projects_grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .projects_filter {
-    min-height: 40px;
-    padding: 8px 12px;
-    font-size: 0.7rem;
+  .project-reveal--featured {
+    grid-column: auto;
+  }
+
+  .project-reveal--featured .project-card_image-wrapper {
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-reveal--featured .project-card_content {
+    padding: 30px 25px;
+  }
+
+  .project-reveal--featured .project-card h3 {
+    font-size: clamp(1.7rem, 7vw, 2rem);
   }
 
   .project-card_content {
@@ -1712,8 +1788,7 @@ html.js .reveal.reveal--visible {
     gap: 7px;
   }
 
-  .project-card h3,
-  .project-card:first-child h3 {
+  .project-card h3 {
     font-size: 1.4rem;
   }
 
@@ -1726,10 +1801,8 @@ html.js .reveal.reveal--visible {
     gap: 18px;
   }
 
-  .projects_footer {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 15px;
+  .project-card_building {
+    padding: 28px;
   }
 
   .project-card_building-content {
@@ -1740,19 +1813,17 @@ html.js .reveal.reveal--visible {
     font-size: clamp(2.5rem, 14vw, 4rem);
   }
 
-  /* Experience */
+  .projects_footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
 
   .experience-item {
     grid-template-columns: 1fr;
     gap: 12px;
     padding-block: 28px;
   }
-
-  .experience-item:hover {
-    padding-left: 0;
-  }
-
-  /* Contact */
 
   .contact_container {
     min-height: 420px;
@@ -1772,9 +1843,8 @@ html.js .reveal.reveal--visible {
     width: 100%;
   }
 
-  /* Footer */
-
   .footer_container {
+    min-height: 110px;
     padding-block: 30px;
   }
 
@@ -1782,97 +1852,416 @@ html.js .reveal.reveal--visible {
     gap: 15px;
   }
 
-  /* Back to top */
-
   .back-to-top {
     right: 15px;
     bottom: 15px;
-
     width: 44px;
     height: 44px;
   }
-
-  /* Reveal */
 
   .reveal {
     transform: translateY(18px);
   }
 }
 
-/* =========================================================
-   RESPONSIVE — SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 500px) {
-  .hero_eyebrow,
-  .section-heading_eyebrow {
-    font-size: 0.65rem;
+/* ---------------------------------------------------------
+   LARGE PHONES / FOLDABLES — 431px–767px
+   Examples:
+   iPhone 16 Pro Max
+   large Android phones
+   narrow foldables
+--------------------------------------------------------- */
+@media (min-width: 431px) and (max-width: 767px) {
+  :root {
+    --section-padding: 54px;
+    --navbar-height: 68px;
   }
 
-  .hero_description {
-    font-size: 0.92rem;
-  }
-
-  .hero_portrait {
-    width: min(100%, 250px);
-  }
-
-  .projects_filters {
-    width: 100%;
-  }
-
-  .projects_filter {
-    flex: 0 0 auto;
-  }
-
-  .project-card_number {
-    top: 14px;
-    left: 14px;
-
-    width: 38px;
-    height: 38px;
-  }
-
-  .footer_links {
-    align-items: flex-start;
-
-    flex-direction: column;
-
-    gap: 10px;
-  }
-}
-
-/* =========================================================
-   RESPONSIVE — VERY SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 400px) {
   .container {
-    width: min(100% - 24px, var(--container-width));
+    width: min(100% - 40px, var(--container-width));
+  }
+
+  .navbar {
+    top: 12px;
+    width: calc(100% - 24px);
+  }
+
+  .navbar_container {
+    min-height: var(--navbar-height);
+    padding-inline: 18px;
+  }
+
+  .navbar_cta {
+    display: none;
+  }
+
+  .navbar_nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    left: 0;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-background);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .navbar_nav--open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .navbar_nav a {
+    padding-block: 5px;
+  }
+
+  .navbar_menu-button {
+    display: flex;
+  }
+
+  .hero {
+    padding-top: calc(var(--navbar-height) + 20px);
+    padding-bottom: 56px;
+  }
+
+  .hero_container {
+    grid-template-columns: 1fr;
+    gap: 48px;
   }
 
   .hero h1 {
-    font-size: 3rem;
+    font-size: clamp(3.4rem, 11vw, 5.5rem);
+  }
+
+  .hero_description {
+    max-width: 650px;
+    margin-top: 28px;
+  }
+
+  .hero_actions {
+    margin-top: 32px;
+  }
+
+  .hero_visual {
+    justify-content: center;
   }
 
   .hero_portrait {
-    width: 230px;
+    width: min(100%, 340px);
   }
 
-  .section-heading h2 {
-    font-size: 2.5rem;
+  .section {
+    padding-block: 54px;
+  }
+
+  .section-heading {
+    margin-bottom: 34px;
+  }
+
+  .section-heading--split {
+    display: block;
+  }
+
+  .section-heading--split > p {
+    max-width: 650px;
+    margin-top: 18px;
+  }
+
+  .about_content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .skills_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects_grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .project-reveal--featured {
+    grid-column: auto;
+  }
+
+  /*
+    Important:
+    Do not force a fixed/minimum height on the project
+    preview for large phones. Let the aspect ratio determine
+    the height naturally.
+  */
+
+  .project-reveal--featured .project-card_image-wrapper,
+  .project-card_image-wrapper {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .project-reveal--featured .project-card_content {
+    padding: 32px;
   }
 
   .project-card_content {
-    padding: 20px;
+    padding: 28px;
+  }
+
+  .project-card p {
+    min-height: auto;
   }
 
   .project-card_building {
-    padding: 22px;
+    min-height: 0;
+    padding: 32px;
+  }
+
+  .project-card_building-content {
+    padding: 45px 0;
+  }
+
+  .project-card_building-content h3 {
+    font-size: clamp(3rem, 11vw, 4.8rem);
+  }
+
+  .experience-item {
+    grid-template-columns: 130px minmax(0, 1fr);
+    gap: 25px;
   }
 
   .contact_container {
-    padding-inline: 20px;
+    min-height: 430px;
+    padding: 60px 35px;
+  }
+
+  .footer_container {
+    min-height: 110px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer_links {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+}
+
+/* ---------------------------------------------------------
+   TABLETS — 768px–1023px
+   Examples:
+   iPad Mini
+   iPad
+   iPad Air
+   Galaxy Tab
+--------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --section-padding: 60px;
+  }
+
+  .container {
+    width: min(100% - 56px, var(--container-width));
+  }
+
+  .navbar {
+    width: min(calc(100% - 32px), 1180px);
+  }
+
+  .navbar_menu-button {
+    display: flex;
+  }
+
+  .navbar_nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    left: 0;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-background);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .navbar_nav--open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .navbar_nav a {
+    padding-block: 5px;
+  }
+
+  .hero {
+    padding-top: calc(var(--navbar-height) + 22px);
+    padding-bottom: 64px;
+  }
+
+  .hero_container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .hero_visual {
+    justify-content: center;
+  }
+
+  .hero_portrait {
+    width: min(100%, 360px);
+  }
+
+  .section {
+    padding-block: 60px;
+  }
+
+  .section-heading {
+    margin-bottom: 36px;
+  }
+
+  .section-heading--split {
+    display: block;
+  }
+
+  .section-heading--split > p {
+    max-width: 650px;
+    margin-top: 18px;
+  }
+
+  .about_content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .projects_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-reveal--featured {
+    grid-column: 1 / -1;
+  }
+
+  .project-reveal--featured .project-card_image-wrapper {
+    aspect-ratio: 21 / 10;
+  }
+
+  .project-card p {
+    min-height: auto;
+  }
+
+  .contact_container {
+    padding: 70px 50px;
+  }
+}
+
+/* ---------------------------------------------------------
+   LAPTOPS — 1024px–1279px
+--------------------------------------------------------- */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  :root {
+    --section-padding: 64px;
+  }
+
+  .container {
+    width: min(100% - 64px, var(--container-width));
+  }
+
+  .navbar {
+    width: min(calc(100% - 32px), 1180px);
+  }
+
+  .hero {
+    padding-top: calc(var(--navbar-height) + 22px);
+    padding-bottom: 68px;
+  }
+
+  .hero_container {
+    grid-template-columns:
+      minmax(0, 1.1fr)
+      minmax(280px, 0.9fr);
+    gap: 56px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.6rem, 6vw, 6rem);
+  }
+
+  .about_content {
+    gap: 70px;
+  }
+
+  .section-heading--split {
+    gap: 50px;
+  }
+
+  .section {
+    padding-block: 64px;
+  }
+}
+
+/* ----- LARGE LAPTOPS — 1280px–1535px ----- */
+@media (min-width: 1280px) and (max-width: 1535px) {
+  :root {
+    --section-padding: 68px;
+  }
+
+  .container {
+    width: min(100% - 64px, var(--container-width));
+  }
+
+  .hero {
+    padding-top: calc(var(--navbar-height) + 24px);
+    padding-bottom: 72px;
+  }
+
+  .hero_container {
+    gap: 64px;
+  }
+
+  .section {
+    padding-block: 68px;
+  }
+}
+
+/* ----- LARGE DISPLAYS — 1536px+ ----- */
+@media (min-width: 1536px) {
+  :root {
+    --section-padding: 72px;
+  }
+
+  .hero {
+    padding-top: calc(var(--navbar-height) + 26px);
+    padding-bottom: 76px;
+  }
+
+  .section {
+    padding-block: 72px;
   }
 }
 
