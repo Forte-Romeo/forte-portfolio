@@ -1,60 +1,85 @@
-# Forte Romeo - Portfolio
+# 🖥️ Forte Romeo — Personal Portfolio
 
-Personal portfolio website for Forte Romeo, an Information Technology student building a foundation in software engineering, full-stack development, and artificial intelligence.
+A personal portfolio website showcasing **Forte Romeo's** software projects, technical skills, learning journey, and evolving professional identity.
 
-The portfolio showcases selected software projects, current technical focus, skills, and development journey.
+Built with React and Vite, the portfolio presents my work as an Information Technology student developing practical skills in software engineering, full-stack development, and artificial intelligence.
 
-## Live Website
+🌐 **Live Website:** [forteromeo.dev](https://forteromeo.dev/)
 
-https://forteromeo.dev/
+---
 
-## Built With
+## ✨ Features
 
-- React
-- Vite
-- JavaScript
-- HTML
-- CSS
-- REST APIs
-- Git
-- GitHub
+- 📱 **Responsive Design** - Layouts optimized for mobile phones, foldables, tablets, laptops, and large displays.
+- 🧑🏽‍💻 **Project Showcase** - Dedicated presentation of selected software projects.
+- ⭐ **Featured Projects** - Highlighted project layouts and project categorization.
+- 👤 **About Section** - An introduction to my background and professional direction.
+- 🧭 **Development Journey** - An overview of my learning progress and current focus.
+- 🛠️ **Technical Skills** - Technologies and skills relevant to my development journey.
+- 📬 **Contact Section** - Links for professional networking and communication.
+- 📱 **Responsive Navigation** - Mobile navigation designed for touch and smaller screens.
+- 🎬 **Scroll-Reveal Animations** - Subtle animations with reduced-motion support.
+- ⬆️ **Back-to-Top Interaction** - Convenient navigation back to the top of the page.
+- ♿ **Accessibility Considerations** - Semantic HTML, keyboard interaction, visible focus states, and motion preferences.
+- 🔎 **SEO Metadata** - Page metadata, canonical URL, and social-sharing metadata.
+- 🌐 **Structured Data** - JSON-LD metadata to describe the website.
+- 🗺️ **Sitemap and Robots Configuration** - Resources supporting search engine discovery.
 
-## Features
+---
 
-- Responsive single-page portfolio
-- Project showcase with category filtering
-- Featured project layout
-- About section
-- Development journey
-- Technical skills section
-- Contact section
-- Responsive mobile navigation
-- Scroll-based reveal animations
-- Reduced-motion support
-- Back-to-top interaction
-- Accessibility-focused interactions
-- SEO metadata
-- Open Graph metadata
-- Twitter metadata
-- JSON-LD structured data
-- Sitemap
-- Robots configuration
+## 🚀 Featured Projects
 
-## Featured Projects
-
-### Weather App
+### 🌦️ Weather Application
 
 A responsive React weather application that consumes live weather data from an external API and presents current conditions through a clean interface.
 
-### API Dashboard
+**Technologies:** React · JavaScript · REST API
 
-A responsive React dashboard powered by the JSONPlaceholder REST API, with search, sorting, pagination, user details, and loading, error, and empty states.
+🔗 [GitHub Repository](https://github.com/Forte-Romeo/weather-dashboard-react)
 
-### Authentication UI
+### 📊 API Dashboard
 
-A responsive React authentication interface with login, sign-up, and password recovery flows, including validation, form state, loading feedback, and reusable UI components.
+A responsive React dashboard powered by the JSONPlaceholder REST API, featuring search, sorting, pagination, user details, and loading, error, and empty states.
 
-## Project Structure
+**Technologies:** React · JavaScript · REST API
+
+🔗 [GitHub Repository](https://github.com/Forte-Romeo/api-dashboard)
+
+### 🔐 Authentication UI
+
+A responsive authentication interface featuring login, sign-up, and password recovery flows, with input validation, form state management, loading feedback, and reusable UI components.
+
+**Technologies:** React · JavaScript · CSS
+
+🔗 [GitHub Repository](https://github.com/Forte-Romeo/authentication-ui)
+
+### 🏗️ ForteFlow
+
+A flagship project in development as part of my broader software engineering journey.
+
+ForteFlow is intended to grow alongside my technical skills, with its progress documented as the project evolves.
+
+**Status:** 🚧 In Development
+
+---
+
+## 🧰 Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| ⚛️ React | Component-based user interface |
+| ⚡ Vite | Development server and production build tooling |
+| 🟨 JavaScript | Application logic and interactivity |
+| 🧱 HTML | Semantic page structure |
+| 🎨 CSS | Styling, layout, and responsive design |
+| 🔌 REST APIs | External data integration in selected projects |
+| 🌿 Git | Version control |
+| 🐙 GitHub | Source code hosting and collaboration |
+| ▲ Vercel | Portfolio deployment and hosting |
+
+---
+
+## 📂 Project Structure
 
 ```text
 forte-portfolio/
@@ -63,6 +88,7 @@ forte-portfolio/
 │       └── ci.yml
 ├── public/
 │   ├── images/
+│   │   ├── portrait/
 │   │   └── projects/
 │   ├── favicon.svg
 │   ├── og-image.jpg
@@ -77,91 +103,106 @@ forte-portfolio/
 ├── .gitignore
 ├── eslint.config.js
 ├── index.html
-├── package-lock.json
 ├── package.json
+├── package-lock.json
 ├── README.md
 └── vite.config.js
 ```
 
-## Getting Started
+---
 
-### Prerequisites
+## ⚙️ Getting Started
 
-- Node.js
-- npm
-- Git
+Follow these steps to run the project locally.
 
-### Clone the repository
+### 📋 Prerequisites
 
-```
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/)
+- npm, which is included with Node.js
+- [Git](https://git-scm.com/)
+
+### 1. 📥 Clone the repository
+
+```bash
 git clone https://github.com/Forte-Romeo/forte-portfolio.git
 cd forte-portfolio
 ```
 
-### Install dependencies
+### 2. 📦 Install dependencies
 
-```
+```bash
 npm install
 ```
 
-### Start the development server
+### 3. 💻 Start the development server
 
-```
+```bash
 npm run dev
 ```
 
-The development server will be available at the local URL provided by Vite.
+Open the local URL provided by Vite in your browser.
 
-## Available Scripts
+---
 
-### Development
+## 🧪 Available Scripts
 
-```
+### Development Server
+
+```bash
 npm run dev
 ```
 
-Starts the Vite development server.
+Starts the local Vite development server.
 
 ### Production Build
 
-```
+```bash
 npm run build
 ```
 
-Creates the optimized production build.
+Creates an optimized production build in the `dist/` directory.
 
-### Lint
+### Linting
 
-```
+```bash
 npm run lint
 ```
 
-Runs ESLint across the project.
+Runs ESLint to check the project for code-quality issues.
 
-### Preview
+### Production Preview
 
-```
+```bash
 npm run preview
 ```
 
-Previews the production build locally.
+Serves the production build locally for verification before deployment.
 
-## Development Workflow
+---
 
-The project follows a simple development workflow:
+## 🔄 Development Workflow
 
-1. Create a focused change.
-2. Test the change locally.
-3. Run ESLint.
-4. Run the production build.
-5. Commit the change using a clear commit message.
-6. Push to GitHub.
+The project follows a structured development workflow focused on maintainability and quality.
 
-## Commit Convention
+1. 🎯 Define a focused change.
+2. 🛠️ Implement the change.
+3. 🧪 Test the relevant functionality locally.
+4. 🧹 Run ESLint.
+5. 🏗️ Run the production build.
+6. 👀 Preview and verify the production build when appropriate.
+7. 📝 Commit changes with a descriptive message.
+8. 🚀 Push changes to GitHub.
+9. 🌐 Verify the deployed website when changes reach production.
 
-Commits follow a conventional structure:
+---
 
-```
+## 📝 Commit Convention
+
+Commit messages follow a conventional structure:
+
+```text
 feat: add new functionality
 fix: correct a bug
 refactor: improve code structure
@@ -169,9 +210,9 @@ docs: update documentation
 chore: update project configuration
 ```
 
-Examples:
+**Examples:**
 
-```
+```text
 feat: add project filtering
 fix: correct mobile navigation behavior
 refactor: simplify reveal animation logic
@@ -179,59 +220,85 @@ docs: update project documentation
 chore: configure github actions
 ```
 
-## Accessibility
+---
 
-The portfolio includes:
+## ♿ Accessibility
 
-- Semantic HTML
-- Keyboard-accessible navigation
-- Visible focus states
-- Escape-key support for the mobile menu
-- Reduced-motion support
-- Accessible project technology lists
-- Descriptive image metadata
-- Responsive layouts
+Accessibility is an important consideration throughout the portfolio.
 
-## SEO
+The project includes:
 
-The site includes:
+- Semantic HTML.
+- Keyboard-accessible navigation.
+- Visible focus states.
+- Escape-key support for the mobile menu.
+- Reduced-motion support.
+- Descriptive image metadata.
+- Responsive layouts and touch-friendly interactions.
 
-- Descriptive page title
-- Meta description
-- Canonical URL
-- Open Graph metadata
-- Twitter metadata
-- JSON-LD structured data
-- Sitemap
-- Robots configuration
+These features aim to make the portfolio easier to navigate across different devices and interaction preferences.
 
-Production domain:
+---
 
-```
-https://forteromeo.dev/
-```
+## 🔎 SEO and Discoverability
 
-## Deployment
+The website includes SEO-related resources and metadata:
 
-The production site is intended to be deployed from the ```main``` branch.
+- Descriptive page title and meta description.
+- Canonical URL.
+- Open Graph metadata.
+- Twitter metadata.
+- JSON-LD structured data.
+- XML sitemap.
+- Robots configuration.
 
-The repository includes GitHub Actions CI to run:
+**Production domain:** [https://forteromeo.dev/](https://forteromeo.dev/)
 
-```
+Additional resources:
+
+- 🗺️ [Sitemap](https://forteromeo.dev/sitemap.xml)
+- 🤖 [Robots.txt](https://forteromeo.dev/robots.txt)
+
+---
+
+## 🚀 Deployment
+
+The portfolio is deployed on **Vercel**, with the custom domain:
+
+🌐 [https://forteromeo.dev](https://forteromeo.dev)
+
+The `main` branch is the intended production source branch.
+
+The repository includes a GitHub Actions CI workflow configured to run the following checks on pushes and pull requests targeting `main`:
+
+```bash
 npm ci
 npm run lint
 npm run build
 ```
 
-on pushes and pull requests targeting ```main```.
+This workflow helps identify linting and production-build issues before changes are considered ready for release.
 
-## Author
+---
 
-Ferguson (**Forte**) Romeo
+## 👨🏽‍💻 Author
 
-- GitHub: https://github.com/Forte-Romeo
-- LinkedIn: https://linkedin.com/in/ferguson-romeo-nyarmah
+**Ferguson (Forte) Romeo**
 
-## License
+Information Technology student building practical experience in software engineering, full-stack development, and AI systems.
 
-This project is a personal portfolio website.
+- 🐙 **GitHub:** [Forte-Romeo](https://github.com/Forte-Romeo)
+- 💼 **LinkedIn:** [Ferguson Romeo Nyarmah](https://linkedin.com/in/ferguson-romeo-nyarmah)
+- 🌐 **Portfolio:** [forteromeo.dev](https://forteromeo.dev/)
+
+---
+
+## 📄 License
+
+This repository contains a personal portfolio website.
+
+Unless a separate license is added to the repository, no additional permission to reuse or redistribute the project should be assumed.
+
+---
+
+⭐ Thanks for visiting the Forte Romeo Portfolio repository!
