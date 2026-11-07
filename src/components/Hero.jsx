@@ -19,8 +19,8 @@ function Hero() {
 
                     <Reveal delay={180}>
                         <p className="hero_description">
-                            I'm Forte Romeo, an Information Technology student building my 
-                            foundation in software engineering, full-stack development, and AI. 
+                            I'm Ferguson Romeo Nyarmah, a Ghanaian Information Technology student building my 
+                            foundation in software engineering, full-stack development, and artificial intelligence. 
                             I learn by turning what I study into working projects.
                         </p>
                     </Reveal>
@@ -63,7 +63,7 @@ function Hero() {
                         <div className="hero_portrait">
                             <img
                                 className="hero_portrait-image hero_portrait-image--bw"
-                                src="/images/portrait/portrait-bw.PNG"
+                                src="/images/portrait/portrait-bw.webp"
                                 alt="Forte Romeo wearing a black suit"
                                 fetchPriority="high"
                                 decoding="async"
@@ -71,8 +71,8 @@ function Hero() {
 
                             <img
                                 className="hero_portrait-image hero_portrait-image--color"
-                                src="/images/portrait/portrait-color.PNG"
-                                alt=""
+                                src="/images/portrait/portrait-color.webp"
+                                alt="Forte Romeo wearing a black suit"
                                 aria-hidden="true"
                                 decoding="async"
                             />

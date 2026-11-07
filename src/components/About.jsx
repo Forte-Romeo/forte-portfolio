@@ -18,9 +18,10 @@ function About() {
                     <Reveal delay={100}>
                         <div className="about_text">
                             <p>
-                                I'm an Information Technology student building my
-                                foundation in software engineering, web development,
-                                full-stack development, and artificial intelligence.
+                                I'm Ferguson Romeo Nyarmah, known professionally as Forte 
+                                Romeo - an Information Technology student in Ghana with 
+                                a growing interest in software engineering, web development,
+                                full-stack development, artificial intelligence, and entrepreneurship.
                             </p>
 
                             <p>

@@ -18,7 +18,7 @@ const projects = [
         number: '02',
         title: 'Weather Application',
         description:
-            'A responsive React weather application that consumes live weather data from an external API and presents current conditions through a clean interface.',
+            'A weather application that retrieves and displays weather information through an external API, presenting current conditions and relevant forecast information in a responsive interface.',
         technologies: ['React', 'JavaScript', 'REST API', 'CSS'],
         category: 'Web Application',
         featured: false,
@@ -44,11 +44,11 @@ const projects = [
     {
         id: 4,
         number: '04',
-        title: 'Authentication UI',
+        title: 'Full-Stack Authentication System',
         description:
-            'A responsive React authentication interface with login, sign-up, and password recovery flows, including validation, form state, loading feedback, and reusable UI components.',
-        technologies: ['React', 'JavaScript', 'CSS'],
-        category: 'React Application',
+            'A full-stack authentication application built with React, Express, and PostgreSQL. Implements JWT-based access authentication, secure HTTP-only refresh cookies, refresh-token rotation and revocation, and protected authentication workflows.',
+        technologies: ['React', 'Vite', 'Node.js', 'Express', 'PostgreSQL', 'JWT', 'JavaScript'],
+        category: 'Full-Stack',
         featured: false,
         status: 'live',
         image: '/images/projects/auth-ui.webp',
@@ -58,9 +58,9 @@ const projects = [
     {
         id: 5,
         number: '05',
-        title: 'Movie Search App',
+        title: 'ForteFilms',
         description:
-            'A movie search application built around external API data, with search, results rendering, and responsive presentation of movie information using HTML, CSS, and JavaScript.',
+            'A movie discovery application that presents film information through a browsable interface, demonstrating frontend development and the integration of external data.',
         technologies: [
             'HTML',
             'JavaScript',

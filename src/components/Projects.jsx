@@ -32,7 +32,7 @@ function Projects() {
                         <p>
                             A growing collection of applications that document my
                             progression through software engineering and modern web
-                            development.
+                            development, and full-stack development.
                         </p>
                     </div>
                 </Reveal>

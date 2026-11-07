@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://forteromeo.dev/sitemap.xml
+Sitemap: https://www.forteromeo.dev/sitemap.xml
